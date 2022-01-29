@@ -31,4 +31,6 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Execute unit tests
-        run: ./gradlew test --tests de.danoeh.antennapod.core --tests de.danoeh.antennapod.parser.feed --tests de.test.antennapod.service
+        run: ./gradlew testPlayDebugUnitTest
+        run: ./gradlew testPlayReleaseUnitTest
+        run: ./gradlew testFreeReleaseUnitTest
