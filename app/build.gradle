@@ -11,8 +11,8 @@ android {
         // Version code schema:
         // "1.2.3-beta4"    -> 1020304
         // "1.2.3"          -> 1020395
-        versionCode 2050001
-        versionName "2.5.0-beta1"
+        versionCode 2050003
+        versionName "2.5.0-beta3"
 
         def commit = ""
         try {
@@ -43,8 +43,8 @@ android {
 
     signingConfigs {
         releaseConfig {
-            v1SigningEnabled true
-            v2SigningEnabled true
+            enableV1Signing true
+            enableV2Signing true
 
             if (project.hasProperty("releaseStoreFile")) {
                 storeFile file(releaseStoreFile)
@@ -120,6 +120,7 @@ dependencies {
     implementation project(':playback:cast')
     implementation project(':ui:app-start-intent')
     implementation project(':ui:common')
+    implementation project(':ui:i18n')
 
     annotationProcessor "androidx.annotation:annotation:$annotationVersion"
     implementation "androidx.appcompat:appcompat:$appcompatVersion"
@@ -128,6 +129,7 @@ dependencies {
     implementation "androidx.fragment:fragment:$fragmentVersion"
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
     implementation "androidx.media:media:$mediaVersion"
+    implementation 'com.android.support:multidex:2.0.1'
     implementation "androidx.palette:palette:$paletteVersion"
     implementation "androidx.preference:preference:$preferenceVersion"
     implementation "androidx.recyclerview:recyclerview:$recyclerViewVersion"
