@@ -82,6 +82,11 @@ android {
                 }
             }
         }
+        benchmark {
+            initWith buildTypes.release
+            signingConfig signingConfigs.debug
+            matchingFallbacks = ['release']
+        }
         release {
             resValue "string", "provider_authority", "de.danoeh.antennapod.provider"
             minifyEnabled true
